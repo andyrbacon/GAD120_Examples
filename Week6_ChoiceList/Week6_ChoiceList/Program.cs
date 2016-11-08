@@ -15,47 +15,56 @@ namespace Week6_ChoiceList
             // do something different based on what item you chose
 
             bool doLoop = true;
-            int selection = 0;
+            int selection = 0; // create an int to track the player's current selection
 
-            string[] attacks = new string[4];
-            attacks[0] = "attack 1";
-            attacks[1] = "attack 2";
-            attacks[2] = "attack 3";
-            attacks[3] = "attack 4";
+            string[] items = new string[4];
+            items[0] = "item 1";
+            items[1] = "item 2";
+            items[2] = "item 3";
+            items[3] = "item 4";
 
             while (doLoop == true)
             {
-                int i = 0;
+                Console.Clear(); // clear the Console so the list is only displayed once
 
+                // player instructions
                 Console.WriteLine("Press W to move up.");
                 Console.WriteLine("Press S to move down.");
                 Console.WriteLine("Press Q to select.\n");
 
-                while (i < attacks.Length)
+                // create an incrementer to loop through the items array 
+                int i = 0; 
+                while (i < items.Length) // loop through the items array
                 {
+                    // highlight the player's selection
                     if (i == selection)
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
                     }
 
-                    Console.WriteLine(attacks[i]);
+                    // display the array item
+                    Console.WriteLine(items[i]);
                     i++;
 
+                    // reset the Console colour so that only one item gets highlighted
                     Console.ResetColor();
                 }
                 Console.WriteLine("");
 
+                // store the player input
                 string input = Console.ReadKey(true).KeyChar.ToString();
 
+                // move up in the list
                 if (input == "w")
                 {
                     if (selection > 0)
                         selection--;
                 }
 
+                // move down in the list
                 if (input == "s")
                 {
-                    if (selection < attacks.Length-1)
+                    if (selection < items.Length-1)
                         selection++;
                 }
             }

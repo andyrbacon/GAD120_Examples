@@ -36,6 +36,8 @@ namespace GAD120_Bacon_Andy_A4
             // keep displaying the map and instructions until the player finds the treasure
             while (hasFoundTreasure == false)
             {
+                Console.Clear(); // clear the Console so that the map is only displayed once
+
                 // start of grid loop
                 for (int y = 1; y <= height; y++) // loop through rows of the grid
                 {
