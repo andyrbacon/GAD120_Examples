@@ -1,0 +1,6 @@
+C:\Users\abacon\Desktop\Week3_GuessTheNumber\Week3_GuessTheNumber\bin\Debug\Week3_GuessTheNumber.exe.config
+C:\Users\abacon\Desktop\Week3_GuessTheNumber\Week3_GuessTheNumber\bin\Debug\Week3_GuessTheNumber.exe
+C:\Users\abacon\Desktop\Week3_GuessTheNumber\Week3_GuessTheNumber\bin\Debug\Week3_GuessTheNumber.pdb
+C:\Users\abacon\Desktop\Week3_GuessTheNumber\Week3_GuessTheNumber\obj\Debug\Week3_GuessTheNumber.csprojResolveAssemblyReference.cache
+C:\Users\abacon\Desktop\Week3_GuessTheNumber\Week3_GuessTheNumber\obj\Debug\Week3_GuessTheNumber.exe
+C:\Users\abacon\Desktop\Week3_GuessTheNumber\Week3_GuessTheNumber\obj\Debug\Week3_GuessTheNumber.pdb

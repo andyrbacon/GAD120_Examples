@@ -1,0 +1,5 @@
+C:\Users\abacon\Desktop\Week3_TreasureChests\Week3_TreasureChests\bin\Debug\Week3_TreasureChests.exe.config
+C:\Users\abacon\Desktop\Week3_TreasureChests\Week3_TreasureChests\bin\Debug\Week3_TreasureChests.exe
+C:\Users\abacon\Desktop\Week3_TreasureChests\Week3_TreasureChests\bin\Debug\Week3_TreasureChests.pdb
+C:\Users\abacon\Desktop\Week3_TreasureChests\Week3_TreasureChests\obj\Debug\Week3_TreasureChests.exe
+C:\Users\abacon\Desktop\Week3_TreasureChests\Week3_TreasureChests\obj\Debug\Week3_TreasureChests.pdb

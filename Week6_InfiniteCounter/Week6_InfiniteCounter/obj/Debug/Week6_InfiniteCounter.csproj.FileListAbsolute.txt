@@ -1,0 +1,6 @@
+C:\Users\abacon\Desktop\Week6_InfiniteCounter\Week6_InfiniteCounter\bin\Debug\Week6_InfiniteCounter.exe.config
+C:\Users\abacon\Desktop\Week6_InfiniteCounter\Week6_InfiniteCounter\bin\Debug\Week6_InfiniteCounter.exe
+C:\Users\abacon\Desktop\Week6_InfiniteCounter\Week6_InfiniteCounter\bin\Debug\Week6_InfiniteCounter.pdb
+C:\Users\abacon\Desktop\Week6_InfiniteCounter\Week6_InfiniteCounter\obj\Debug\Week6_InfiniteCounter.csprojResolveAssemblyReference.cache
+C:\Users\abacon\Desktop\Week6_InfiniteCounter\Week6_InfiniteCounter\obj\Debug\Week6_InfiniteCounter.exe
+C:\Users\abacon\Desktop\Week6_InfiniteCounter\Week6_InfiniteCounter\obj\Debug\Week6_InfiniteCounter.pdb
