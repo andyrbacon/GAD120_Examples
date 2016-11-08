@@ -17,14 +17,14 @@ namespace Week6_ChoiceList
             bool doLoop = true;
             int selection = 0;
 
+            string[] attacks = new string[4];
+            attacks[0] = "attack 1";
+            attacks[1] = "attack 2";
+            attacks[2] = "attack 3";
+            attacks[3] = "attack 4";
+
             while (doLoop == true)
             {
-                string[] attacks = new string[4];
-                attacks[0] = "attack 1";
-                attacks[1] = "attack 2";
-                attacks[2] = "attack 3";
-                attacks[3] = "attack 4";
-
                 int i = 0;
 
                 Console.WriteLine("Press W to move up.");
