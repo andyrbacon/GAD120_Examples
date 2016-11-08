@@ -1,0 +1,6 @@
+C:\Users\abacon\Documents\GAD120_Examples\Week6_ChoiceList\Week6_ChoiceList\bin\Debug\Week6_ChoiceList.exe.config
+C:\Users\abacon\Documents\GAD120_Examples\Week6_ChoiceList\Week6_ChoiceList\bin\Debug\Week6_ChoiceList.exe
+C:\Users\abacon\Documents\GAD120_Examples\Week6_ChoiceList\Week6_ChoiceList\bin\Debug\Week6_ChoiceList.pdb
+C:\Users\abacon\Documents\GAD120_Examples\Week6_ChoiceList\Week6_ChoiceList\obj\Debug\Week6_ChoiceList.csprojResolveAssemblyReference.cache
+C:\Users\abacon\Documents\GAD120_Examples\Week6_ChoiceList\Week6_ChoiceList\obj\Debug\Week6_ChoiceList.exe
+C:\Users\abacon\Documents\GAD120_Examples\Week6_ChoiceList\Week6_ChoiceList\obj\Debug\Week6_ChoiceList.pdb
