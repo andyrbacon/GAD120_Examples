@@ -20,23 +20,16 @@ namespace MatrixRain
             int[] rainY = new int[rainNum];
             bool[] doFall = new bool[rainNum];
             int[] fallDelay = new int[rainNum];
-            string[] symbol = new string[rainNum];
-            int[] rainSpeed = new int[rainNum];
-            int minRainSpeed = 1;
-            int maxRainSpeed = 10;
             int timer = 0;
             int sleepTime = 75;
             int cycleTime = 100;
-            int rainLength = 5;
+            int rainLength = 10;
 
             Random random = new Random();
             for (int r = 0; r < rainNum; r++)
             {
                 fallDelay[r] = random.Next(0, cycleTime);
                 rainY[r] = -1;
-                char c = (char)random.Next(0, 255);
-                symbol[r] = c.ToString();
-                rainSpeed[r] = random.Next(minRainSpeed, maxRainSpeed);
             }
 
             while (doLoop)
@@ -54,27 +47,24 @@ namespace MatrixRain
                         {
                             int spaceAway = rainY[x] - y;
 
-                            string symb = ((char)random.Next(33, 126)).ToString();
+                            string symbol = ((char)random.Next(33, 126)).ToString();
 
                             if (spaceAway == 0)
                             {
                                 Console.ForegroundColor = ConsoleColor.White;
-                                //Console.Write(" A ");
                             }
 
-                            if (spaceAway == 1)
+                            if (spaceAway == 1 || spaceAway == 2)
                             {
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                //Console.Write(" B ");
                             }
 
-                            if (spaceAway >= 2 && spaceAway <= rainLength)
+                            if (spaceAway >= 3 && spaceAway <= rainLength)
                             {
                                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                //Console.Write(" C ");
                             }
 
-                            Console.Write(" " + symb + " ");
+                            Console.Write(" " + symbol + " ");
                         }
                         else
                         {
@@ -85,7 +75,6 @@ namespace MatrixRain
                 }
 
                 System.Threading.Thread.Sleep(sleepTime);
-                //Console.ReadLine();
                 if (timer < cycleTime) timer++; else timer = 0;
 
                 // reset digital rain
@@ -94,8 +83,6 @@ namespace MatrixRain
                     if (rainY[r] < height + rainLength && doFall[r])
                     {
                         rainY[r]++;
-                        //char c = (string)(char)random.Next(33, 126);
-                        symbol[r] = ((char)random.Next(33, 126)).ToString();
                     }
                     else
                     {
@@ -107,7 +94,6 @@ namespace MatrixRain
                     {
                         doFall[r] = true;
                         fallDelay[r] = random.Next(0, cycleTime);
-                        rainSpeed[r] = random.Next(minRainSpeed, maxRainSpeed);
                     }
                 }
             }

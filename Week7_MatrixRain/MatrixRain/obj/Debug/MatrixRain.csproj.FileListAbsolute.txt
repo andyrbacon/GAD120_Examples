@@ -10,3 +10,9 @@ C:\Users\abacon\Desktop\MatrixRain\MatrixRain\obj\Debug\MatrixRain.pdb
 C:\Users\abacon\Desktop\MatrixRain\MatrixRain\bin\Debug\MatrixRain.exe
 C:\Users\abacon\Desktop\MatrixRain\MatrixRain\bin\Debug\MatrixRain.pdb
 C:\Users\abacon\Desktop\MatrixRain\MatrixRain\obj\Debug\MatrixRain.csprojResolveAssemblyReference.cache
+C:\Users\abacon\Documents\GAD120_Examples\Week7_MatrixRain\MatrixRain\bin\Debug\MatrixRain.exe.config
+C:\Users\abacon\Documents\GAD120_Examples\Week7_MatrixRain\MatrixRain\obj\Debug\MatrixRain.exe
+C:\Users\abacon\Documents\GAD120_Examples\Week7_MatrixRain\MatrixRain\obj\Debug\MatrixRain.pdb
+C:\Users\abacon\Documents\GAD120_Examples\Week7_MatrixRain\MatrixRain\bin\Debug\MatrixRain.exe
+C:\Users\abacon\Documents\GAD120_Examples\Week7_MatrixRain\MatrixRain\bin\Debug\MatrixRain.pdb
+C:\Users\abacon\Documents\GAD120_Examples\Week7_MatrixRain\MatrixRain\obj\Debug\MatrixRain.csprojResolveAssemblyReference.cache
