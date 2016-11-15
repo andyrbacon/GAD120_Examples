@@ -1,0 +1,5 @@
+C:\Users\abacon\Desktop\Week7_ToggleHighlight\Week7_ToggleHighlight\bin\Debug\Week7_ToggleHighlight.exe.config
+C:\Users\abacon\Desktop\Week7_ToggleHighlight\Week7_ToggleHighlight\bin\Debug\Week7_ToggleHighlight.exe
+C:\Users\abacon\Desktop\Week7_ToggleHighlight\Week7_ToggleHighlight\bin\Debug\Week7_ToggleHighlight.pdb
+C:\Users\abacon\Desktop\Week7_ToggleHighlight\Week7_ToggleHighlight\obj\Debug\Week7_ToggleHighlight.exe
+C:\Users\abacon\Desktop\Week7_ToggleHighlight\Week7_ToggleHighlight\obj\Debug\Week7_ToggleHighlight.pdb
