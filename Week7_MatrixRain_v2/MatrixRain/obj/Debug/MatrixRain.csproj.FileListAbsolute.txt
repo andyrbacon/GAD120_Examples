@@ -22,3 +22,9 @@ C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_DigitalRain\MatrixRain\
 C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_DigitalRain\MatrixRain\bin\Debug\MatrixRain.exe
 C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_DigitalRain\MatrixRain\bin\Debug\MatrixRain.pdb
 C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_DigitalRain\MatrixRain\obj\Debug\MatrixRain.csprojResolveAssemblyReference.cache
+C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_MatrixRain_v2\MatrixRain\bin\Debug\MatrixRain.exe.config
+C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_MatrixRain_v2\MatrixRain\obj\Debug\MatrixRain.exe
+C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_MatrixRain_v2\MatrixRain\obj\Debug\MatrixRain.pdb
+C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_MatrixRain_v2\MatrixRain\bin\Debug\MatrixRain.exe
+C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_MatrixRain_v2\MatrixRain\bin\Debug\MatrixRain.pdb
+C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_MatrixRain_v2\MatrixRain\obj\Debug\MatrixRain.csprojResolveAssemblyReference.cache

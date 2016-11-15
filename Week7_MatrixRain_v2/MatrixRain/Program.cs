@@ -20,7 +20,7 @@ namespace MatrixRain
             int[] fallDelay = new int[rainNum];
             string[,] symbols = new string[width, height]; 
             int timer = 0;
-            int sleepTime = 75;
+            int sleepTime = 50;
             int cycleTime = 100;
             int rainLength = 10;
 
@@ -31,6 +31,7 @@ namespace MatrixRain
                 rainY[r] = -1;
             }
 
+            // fill the grid with random characters
             for (int y = 0; y < height; y++)
             {
                 for (int x = width - 1; x >= 0; x--)
