@@ -1,0 +1,12 @@
+C:\Users\iambacon\Desktop\MatrixRain\MatrixRain\bin\Debug\MatrixRain.exe.config
+C:\Users\iambacon\Desktop\MatrixRain\MatrixRain\bin\Debug\MatrixRain.exe
+C:\Users\iambacon\Desktop\MatrixRain\MatrixRain\bin\Debug\MatrixRain.pdb
+C:\Users\iambacon\Desktop\MatrixRain\MatrixRain\obj\Debug\MatrixRain.csprojResolveAssemblyReference.cache
+C:\Users\iambacon\Desktop\MatrixRain\MatrixRain\obj\Debug\MatrixRain.exe
+C:\Users\iambacon\Desktop\MatrixRain\MatrixRain\obj\Debug\MatrixRain.pdb
+C:\Users\abacon\Desktop\MatrixRain\MatrixRain\bin\Debug\MatrixRain.exe.config
+C:\Users\abacon\Desktop\MatrixRain\MatrixRain\obj\Debug\MatrixRain.exe
+C:\Users\abacon\Desktop\MatrixRain\MatrixRain\obj\Debug\MatrixRain.pdb
+C:\Users\abacon\Desktop\MatrixRain\MatrixRain\bin\Debug\MatrixRain.exe
+C:\Users\abacon\Desktop\MatrixRain\MatrixRain\bin\Debug\MatrixRain.pdb
+C:\Users\abacon\Desktop\MatrixRain\MatrixRain\obj\Debug\MatrixRain.csprojResolveAssemblyReference.cache
