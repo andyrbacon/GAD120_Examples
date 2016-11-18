@@ -23,6 +23,8 @@ namespace MatrixRain
             int sleepTime = 50;
             int cycleTime = 100;
             int rainLength = 10;
+            ConsoleColor darkColor = ConsoleColor.DarkGreen;
+            ConsoleColor lightColor = ConsoleColor.Green;
 
             Random random = new Random();
             for (int r = 0; r < rainNum; r++)
@@ -59,11 +61,11 @@ namespace MatrixRain
                         }
                         else if (spaceAway >= 1 && spaceAway <= 8)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = lightColor;
                         }
                         else if (spaceAway > 8 && spaceAway <= rainLength)
                         {
-                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.ForegroundColor = darkColor;
                         }
                         else
                         {
