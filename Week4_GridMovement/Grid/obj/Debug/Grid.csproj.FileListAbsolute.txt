@@ -15,3 +15,9 @@ C:\Users\abacon\Documents\GAD120_Examples\Week4_GridMovement\Grid\obj\Debug\Grid
 C:\Users\abacon\Documents\GAD120_Examples\Week4_GridMovement\Grid\bin\Debug\Grid.exe
 C:\Users\abacon\Documents\GAD120_Examples\Week4_GridMovement\Grid\bin\Debug\Grid.pdb
 C:\Users\abacon\Documents\GAD120_Examples\Week4_GridMovement\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache
+C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week4_GridMovement\Grid\bin\Debug\Grid.exe.config
+C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week4_GridMovement\Grid\bin\Debug\Grid.exe
+C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week4_GridMovement\Grid\bin\Debug\Grid.pdb
+C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week4_GridMovement\Grid\obj\Debug\Grid.csprojResolveAssemblyReference.cache
+C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week4_GridMovement\Grid\obj\Debug\Grid.exe
+C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week4_GridMovement\Grid\obj\Debug\Grid.pdb

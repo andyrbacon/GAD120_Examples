@@ -14,7 +14,6 @@ namespace GAD120_Bacon_Andy_A4
 
             int width = 10;
             int height = 10;
-            string rowMessage = "";
 
             Random r = new Random();
             int playerX = r.Next(1, width);
@@ -41,29 +40,33 @@ namespace GAD120_Bacon_Andy_A4
                 // start of grid loop
                 for (int y = 1; y <= height; y++) // loop through rows of the grid
                 {
-                    rowMessage = ""; // reset the row
+                   Console.WriteLine(); // reset the row
 
                     for (int x = 1; x <= width; x++) // loop through columns of the grid
                     {
           
                         if (x == playerX && y == playerY)
                         {
-                            rowMessage += " [P] "; // player
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write(" [P] "); // player
                         }
                         else if (x == treasureX && y == treasureY && doShowTreasure == true)
                         {
-                            rowMessage += " [T] "; // treasure
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.Write(" [T] "); // treasure
                         }
                         else
                         {
-                            rowMessage += " [ ] "; // add grid spaces to the row 
+                            Console.ResetColor();
+                            Console.Write(" [ ] "); // add grid spaces to the row 
                         }
                     }
-
-                    Console.WriteLine(rowMessage);
                 }
                 // end of grid loop
 
+                // instructions
+                Console.ResetColor();
+                Console.WriteLine();
                 Console.WriteLine("Enter 'W' to move up.");
                 Console.WriteLine("Enter 'A' to move left.");
                 Console.WriteLine("Enter 'D' to move right.");
