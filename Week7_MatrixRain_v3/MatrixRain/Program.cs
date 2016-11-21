@@ -10,6 +10,10 @@ namespace MatrixRain
     {
         static void Main(string[] args)
         {
+
+            Console.Title = "--- Digital Rain ---";
+            Console.WriteLine("--- Digital Rain ---\n");
+
             bool doLoop = true;
 
             int width = 25;
@@ -32,7 +36,7 @@ namespace MatrixRain
             for (int r = 0; r < rainNum; r++)
             {
                 doFall[r] = false;
-                fallDelay[r] = random.Next(0, cycleTime);
+                fallDelay[r] = random.Next(1, cycleTime);
                 rainY[r] = -1;
                 yChanger[r] = random.Next(0, height);
                 rainSpeed[r] = random.Next(minRainSpeed, maxRainSpeed);
@@ -62,14 +66,13 @@ namespace MatrixRain
 
             ConsoleColor darkColor = darkColors[0];
             ConsoleColor lightColor = lightColors[0];
-            Console.Write("Choose a color: \n");
 
+            Console.Write("Choose a color: \n");
             for (int i = 0; i < darkColors.Length; i++)
             {
                 Console.ForegroundColor = darkColors[i];
                 Console.WriteLine((i + 1).ToString() + ". " + lightColors[i].ToString());
             }
-
             string input = Console.ReadKey(true).KeyChar.ToString();
             int colorIndex = int.Parse(input) - 1;
             darkColor = darkColors[colorIndex];
