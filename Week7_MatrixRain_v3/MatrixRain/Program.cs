@@ -52,8 +52,8 @@ namespace MatrixRain
             }
 
             // choose a color
-            ConsoleColor[] darkColors = new ConsoleColor[4];
-            ConsoleColor[] lightColors = new ConsoleColor[4];
+            ConsoleColor[] darkColors = new ConsoleColor[6];
+            ConsoleColor[] lightColors = new ConsoleColor[6];
 
             darkColors[0] = ConsoleColor.DarkGreen;
             lightColors[0] = ConsoleColor.Green;
@@ -63,6 +63,10 @@ namespace MatrixRain
             lightColors[2] = ConsoleColor.Yellow;
             darkColors[3] = ConsoleColor.DarkCyan;
             lightColors[3] = ConsoleColor.Cyan;
+            darkColors[4] = ConsoleColor.DarkMagenta;
+            lightColors[4] = ConsoleColor.Magenta;
+            darkColors[5] = ConsoleColor.DarkGray;
+            lightColors[5] = ConsoleColor.Gray;
 
             ConsoleColor darkColor = darkColors[0];
             ConsoleColor lightColor = lightColors[0];
@@ -70,13 +74,28 @@ namespace MatrixRain
             Console.Write("Choose a color: \n");
             for (int i = 0; i < darkColors.Length; i++)
             {
-                Console.ForegroundColor = darkColors[i];
+                Console.ForegroundColor = lightColors[i];
                 Console.WriteLine((i + 1).ToString() + ". " + lightColors[i].ToString());
             }
+            Console.ResetColor();
+
+            string rainbowName = (lightColors.Length+1).ToString() + ". Glitch";
+            int cIndex = 0;
+            foreach (char c in rainbowName)
+            {
+                Console.ForegroundColor = lightColors[cIndex];
+                Console.Write(c.ToString());
+                if (cIndex < lightColors.Length-1) cIndex++; else cIndex = 0;
+            }
+            //Console.WriteLine((darkColors.Length+1).ToString() + ". " + "Rainbow");
+
             string input = Console.ReadKey(true).KeyChar.ToString();
             int colorIndex = int.Parse(input) - 1;
-            darkColor = darkColors[colorIndex];
-            lightColor = lightColors[colorIndex];
+            if (colorIndex < darkColors.Length)
+            {
+                darkColor = darkColors[colorIndex];
+                lightColor = lightColors[colorIndex];
+            }
 
             while (doLoop)
             {
@@ -101,11 +120,13 @@ namespace MatrixRain
                         }
                         else if (spaceAway >= 1 && spaceAway <= 8)
                         {
-                            Console.ForegroundColor = lightColor;
+                            if (colorIndex == darkColors.Length) Console.ForegroundColor = lightColors[random.Next(0, lightColors.Length - 1)];
+                            else Console.ForegroundColor = lightColor;
                         }
                         else if (spaceAway > 8 && spaceAway <= rainLength)
                         {
-                            Console.ForegroundColor = darkColor;
+                            if (colorIndex == darkColors.Length) Console.ForegroundColor = darkColors[random.Next(0, darkColors.Length - 1)];
+                            else Console.ForegroundColor = darkColor;
                         }
                         else
                         {

@@ -34,3 +34,8 @@ C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_MatrixRain_v3\MatrixRai
 C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_MatrixRain_v3\MatrixRain\bin\Debug\MatrixRain.exe
 C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_MatrixRain_v3\MatrixRain\bin\Debug\MatrixRain.pdb
 C:\Users\iambacon\Desktop\Personal\GAD120_Examples\Week7_MatrixRain_v3\MatrixRain\obj\Debug\MatrixRain.csprojResolveAssemblyReference.cache
+C:\Users\abacon\Desktop\GAD120_Example_Git\Week7_MatrixRain_v3\MatrixRain\bin\Debug\MatrixRain.exe.config
+C:\Users\abacon\Desktop\GAD120_Example_Git\Week7_MatrixRain_v3\MatrixRain\bin\Debug\MatrixRain.exe
+C:\Users\abacon\Desktop\GAD120_Example_Git\Week7_MatrixRain_v3\MatrixRain\bin\Debug\MatrixRain.pdb
+C:\Users\abacon\Desktop\GAD120_Example_Git\Week7_MatrixRain_v3\MatrixRain\obj\Debug\MatrixRain.exe
+C:\Users\abacon\Desktop\GAD120_Example_Git\Week7_MatrixRain_v3\MatrixRain\obj\Debug\MatrixRain.pdb
