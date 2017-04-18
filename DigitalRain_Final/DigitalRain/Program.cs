@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace MatrixRain
+namespace DigitalRain
 {
     class Program
     {
@@ -14,8 +14,6 @@ namespace MatrixRain
 
         static void Main(string[] args)
         {
-            //Thread t = new Thread(new ThreadStart(InputListener));
-
             Console.Title = "--- Digital Rain ---";
 
             int width = 25;
@@ -87,7 +85,7 @@ namespace MatrixRain
                 Console.WriteLine("   by Andy Bacon\n\n");
 
                 // display color options
-                Console.Write("Use the ARROW KEYS to choose a color. \nPress ENTER to start.\n\n");
+                Console.Write("Use the ARROW KEYS to choose a color. \nPress SPACE to start.\n\n");
                 for (int i = 0; i < darkColors.Length; i++)
                 {
                     string arrow = "";
@@ -147,8 +145,8 @@ namespace MatrixRain
 
             while (state == State.rain)
             {
-                Console.Clear(); // clear the Console so that the map is only displayed once
-
+                Console.Clear();
+                
                 // start of grid loop
                 for (int y = 0; y < height; y++) // loop through rows of the grid
                 {
@@ -186,7 +184,7 @@ namespace MatrixRain
                 }
 
                 System.Threading.Thread.Sleep(sleepTime);
-                //Console.ReadLine();
+
                 if (timer < cycleTime) timer++; else timer = 0;
 
                 // reset digital rain
