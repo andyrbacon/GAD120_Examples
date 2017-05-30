@@ -13,14 +13,16 @@ namespace Week9_Audio
         static void Main(string[] args)
         {
             // SETUP:
+            // 0. Use namespace System.IO and System.Media
             // 1. Drag the .wav file from Windows explorer into Visual Studio / Solution Explorer / Project Name
-            // 2. Click on the .wav file in the Solution Explorer
+            // 2. Click on the .wav file in the Solution Explorer to open it (not sure why you have to do this...)
             // 3. Change 'Copy to Output Directory' to 'Copy if newer'
-            // 4. Double-click on the .wav file in the Solution Explorer to open the file
+            // 4. Create a SoundPlayer object and set its SoundLocation parameter to the sound file's path
+            // 5. Use SoundPlayer.Play() to play the sound
 
             SoundPlayer soundPlayer = new SoundPlayer();
-            string coinFilePath = Environment.CurrentDirectory + Path.DirectorySeparatorChar + "Blah.wav";
-            string fireBallPath = Environment.CurrentDirectory + Path.DirectorySeparatorChar + "Fireball.wav";
+            string coinFilePath = Environment.CurrentLocation + "Blah.wav";
+            string fireBallPath = Environment.CurrentLocation + "Fireball.wav";
             string spell = "";
 
             while (true)
