@@ -1,0 +1,121 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Week9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Team1();
+            //Team2();
+            Team3();
+        }
+
+        static void Team3()
+        {
+            int numberOfLevels = 3;
+            int[] numbers = new int[] { 1, 2, 3 };
+            string[] difficultys = new string[] { "Easy", "Normal", "Crushing" };
+            string[] names = new string[] { "Death", "Rylan", "Ai / LaSalle" };
+            int[] scores = new int[] { -10, 9001, 1000000};
+            int levelDisplayIndex = 0;
+
+            while (true) // game
+            {
+                Console.Clear();
+
+                // number
+                Console.WriteLine(numbers[levelDisplayIndex]);
+                // difficulty
+                Console.WriteLine(difficultys[levelDisplayIndex]);
+                // names
+                Console.WriteLine(names[levelDisplayIndex]);
+                // scores
+                Console.WriteLine(scores[levelDisplayIndex]);
+
+                ConsoleKey key = Console.ReadKey().Key;
+                if (key == ConsoleKey.RightArrow)
+                {
+                    if (levelDisplayIndex < numberOfLevels-1)
+                        levelDisplayIndex++;
+                    else
+                        levelDisplayIndex = 0;                           
+                }
+
+                if (key == ConsoleKey.LeftArrow)
+                {
+                    if (levelDisplayIndex > 0)
+                        levelDisplayIndex--;
+                    else
+                        levelDisplayIndex = numberOfLevels - 1;
+                }
+            }
+
+        }
+
+        static void Team2()
+        {
+            int gridSize = 25;
+            int highlightRowIndex = -1;
+
+            while (true) // game loop
+            {
+                Console.Clear();
+
+                for (int y = 0; y < gridSize; y++)
+                {
+                    Console.ResetColor();
+                    Console.Write((y + 1) + ": ");
+                    
+                    if (y == highlightRowIndex-1)
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+
+                    for (int x = 0; x < gridSize; x++)
+                    {
+                        Console.Write("X");
+                    }
+                    Console.WriteLine();
+                }
+
+                if (highlightRowIndex >= 0 && highlightRowIndex <= gridSize)
+                {
+                    System.Threading.Thread.Sleep(1500);
+                    highlightRowIndex = -1;
+                    continue;
+                }
+
+                Console.WriteLine("Enter a number to light up the corresponding row.");
+                string input = Console.ReadLine();
+                highlightRowIndex = int.Parse(input);
+            }
+        }
+
+        static void Team1()
+        {
+            Random r = new Random();
+            int numberOfNames = 4;
+            string[] names = new string[numberOfNames];
+
+            Console.WriteLine("Enter " + numberOfNames +  " names:");
+
+            for (int i = 0; i < numberOfNames; i++)
+            {
+                names[i] = Console.ReadLine();
+            }
+
+            int nameIndex = r.Next(0, numberOfNames);
+            Console.WriteLine("The random name is " + names[nameIndex]);
+
+            Console.WriteLine("BACKWARDS ORDER:");
+
+            for (int i = numberOfNames-1; i >= 0; i--)
+            {
+                Console.WriteLine(names[i]);
+            }
+        }
+    }
+}
