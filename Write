@@ -12,7 +12,7 @@ namespace Write
         {
             Write("Look. ", ConsoleColor.Red);
             Write("It's so easy ", ConsoleColor.Green);
-            Write("to change colors.", ConsoleColor.Yellow);
+            Write("to change colors.", ConsoleColor.Yellow, true);
         }
         
         static void Write(string message, ConsoleColor color = ConsoleColor.Gray, bool doSpaceAfter = false)
