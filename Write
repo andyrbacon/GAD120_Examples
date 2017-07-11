@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GAD120_Bacon_Andy_A1
+namespace Write
 {
     class Program
     {
