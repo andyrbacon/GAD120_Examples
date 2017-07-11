@@ -1,3 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GAD120_Bacon_Andy_A1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Write("Look. ", ConsoleColor.Red, false);
+            Write("It's so easy ", ConsoleColor.Green, false);
+            Write("to change colors.", ConsoleColor.Yellow);
+        }
+        
         static void Write(string message, ConsoleColor color, bool doSpaceAfter = true)
         {
             Console.ForegroundColor = color;
@@ -6,3 +23,5 @@
             if (doSpaceAfter)
                 Console.WriteLine();
         }
+   }
+}
