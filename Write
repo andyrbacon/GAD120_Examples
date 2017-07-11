@@ -10,12 +10,12 @@ namespace Write
     {
         static void Main(string[] args)
         {
-            Write("Look. ", ConsoleColor.Red, false);
-            Write("It's so easy ", ConsoleColor.Green, false);
+            Write("Look. ", ConsoleColor.Red);
+            Write("It's so easy ", ConsoleColor.Green);
             Write("to change colors.", ConsoleColor.Yellow);
         }
         
-        static void Write(string message, ConsoleColor color, bool doSpaceAfter = true)
+        static void Write(string message, ConsoleColor color = ConsoleColor.Gray, bool doSpaceAfter = false)
         {
             Console.ForegroundColor = color;
             Console.Write(message);
