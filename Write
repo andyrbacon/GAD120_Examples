@@ -1,0 +1,8 @@
+        static void Write(string message, ConsoleColor color, bool doSpaceAfter = true)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(message);
+            Console.ResetColor();
+            if (doSpaceAfter)
+                Console.WriteLine();
+        }
