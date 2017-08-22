@@ -1,0 +1,143 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Battle
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int playerMaxHealth = 100;
+            int playerHealth = playerMaxHealth;
+            int playerDefence = 0;
+            ConsoleColor playerColor = ConsoleColor.Cyan;
+            int enemyMaxHealth = 100;
+            int enemyHealth = enemyMaxHealth;
+            int enemyDefence = 0;
+            ConsoleColor enemyColor = ConsoleColor.Red;
+
+            int playerMovesNum = 4;
+            string[] playerMoveNames = new string[playerMovesNum];
+            int[] playerMoveValues = new int[playerMovesNum];
+            string[] playerMoveTypes = new string[playerMovesNum];
+            int[] playerMovePoints = new int[playerMovesNum];
+            int[] playerMovePointsLeft = new int[playerMovesNum];
+
+            int m = 0;
+            playerMoveNames[m] = "Punch";
+            playerMoveValues[m] = 10;
+            playerMoveTypes[m] = "attack";
+            playerMovePoints[m] = 5;
+            playerMovePointsLeft[m] = playerMovePoints[m];
+
+            m = 1;
+            playerMoveNames[m] = "Heal";
+            playerMoveValues[m] = 10;
+            playerMoveTypes[m] = "heal";
+            playerMovePoints[m] = 2;
+            playerMovePointsLeft[m] = playerMovePoints[m];
+
+            m = 2;
+            playerMoveNames[m] = "Super Punch";
+            playerMoveValues[m] = 10;
+            playerMoveTypes[m] = "attack";
+            playerMovePoints[m] = 1;
+            playerMovePointsLeft[m] = playerMovePoints[m];
+
+            m = 3;
+            playerMoveNames[m] = "Lower Enemy Defense";
+            playerMoveValues[m] = 10;
+            playerMoveTypes[m] = "lower defense";
+            playerMovePoints[m] = 1;
+            playerMovePointsLeft[m] = playerMovePoints[m];
+
+            int selectedMove = 0;
+
+            while (true)
+            {
+                Console.Clear();
+
+                // display player and enemy stats
+               
+                Console.ForegroundColor = playerColor;
+                Console.WriteLine("YOUR STATS: ");
+                Console.WriteLine("HP " + playerHealth + "/" + playerMaxHealth);
+                Console.WriteLine("Defence " + playerDefence);
+                Console.WriteLine();
+
+                Console.ForegroundColor = enemyColor;
+                Console.WriteLine("ENEMY STATS: ");
+                Console.WriteLine("HP " + enemyHealth + "/" + enemyMaxHealth);
+                Console.WriteLine("Defence " + enemyDefence);
+                Console.WriteLine();
+
+                Console.ResetColor();
+
+                // display moves
+                for (int i = 0; i < playerMovesNum; i++)
+                {
+                    if (i == selectedMove)
+                        Console.Write(" > ");
+                    else
+                        Console.Write("   ");
+
+                    Console.WriteLine(playerMoveNames[i]);
+                    Console.WriteLine("   " + playerMovePointsLeft[i] + "/" + playerMovePoints[i]);
+                    Console.WriteLine();
+                }
+
+                // select moves
+                ConsoleKey key = Console.ReadKey().Key;
+                if (key == ConsoleKey.UpArrow)
+                {
+                    if (selectedMove > 0)
+                        selectedMove--;
+                    else
+                        selectedMove = playerMovesNum - 1;
+                }
+
+                if (key == ConsoleKey.DownArrow)
+                {
+                    if (selectedMove < playerMovesNum - 1)
+                        selectedMove++;
+                    else
+                        selectedMove = 0;
+                }
+
+                // choose move
+                if (key == ConsoleKey.Spacebar)
+                {
+                    if (playerMovePointsLeft[selectedMove] == 0)
+                    {
+                        Console.WriteLine("You are out of that move.");
+                        System.Threading.Thread.Sleep(500);
+                        continue;
+                    }
+
+                    Console.WriteLine("You used " + playerMoveNames[selectedMove]);
+                    System.Threading.Thread.Sleep(500);
+                    if (playerMoveTypes[selectedMove] == "attack")
+                    {
+                        enemyHealth -= playerMoveValues[selectedMove];
+                    }
+                    if (playerMoveTypes[selectedMove] == "heal")
+                    {
+                        playerHealth += playerMoveValues[selectedMove];
+                    }
+                    if (playerMoveTypes[selectedMove] == "lower defense")
+                    {
+                        enemyDefence -= playerMoveValues[selectedMove];
+                    }
+
+                    playerMovePointsLeft[selectedMove]--;
+
+                    // enemy attack
+                    Random r = new Random();
+                }
+            }
+        }
+    }
+}
