@@ -10,6 +10,7 @@ namespace Battle
     {
         static void Main(string[] args)
         {
+            Random r = new Random();
             int playerMaxHealth = 100;
             int playerHealth = playerMaxHealth;
             int playerDefence = 0;
@@ -19,13 +20,21 @@ namespace Battle
             int enemyDefence = 0;
             ConsoleColor enemyColor = ConsoleColor.Red;
 
-            int playerMovesNum = 4;
+            int playerMovesNum = 5;
             string[] playerMoveNames = new string[playerMovesNum];
             int[] playerMoveValues = new int[playerMovesNum];
             string[] playerMoveTypes = new string[playerMovesNum];
             int[] playerMovePoints = new int[playerMovesNum];
             int[] playerMovePointsLeft = new int[playerMovesNum];
 
+            int enemyMovesNum = 5;
+            string[] enemyMoveNames = new string[enemyMovesNum];
+            int[] enemyMoveValues = new int[enemyMovesNum];
+            string[] enemyMoveTypes = new string[enemyMovesNum];
+            int[] enemyMovePoints = new int[enemyMovesNum];
+            int[] enemyMovePointsLeft = new int[enemyMovesNum];
+
+            // define player moves
             int m = 0;
             playerMoveNames[m] = "Punch";
             playerMoveValues[m] = 10;
@@ -50,13 +59,56 @@ namespace Battle
             m = 3;
             playerMoveNames[m] = "Lower Enemy Defense";
             playerMoveValues[m] = 10;
-            playerMoveTypes[m] = "lower defense";
+            playerMoveTypes[m] = "lower enemy defence";
             playerMovePoints[m] = 1;
             playerMovePointsLeft[m] = playerMovePoints[m];
 
+            m = 4;
+            playerMoveNames[m] = "Increase Defence";
+            playerMoveValues[m] = 10;
+            playerMoveTypes[m] = "increase defence";
+            playerMovePoints[m] = 1;
+            playerMovePointsLeft[m] = playerMovePoints[m];
+
+            // define enemy moves
+            m = 0;
+            enemyMoveNames[m] = "Punch";
+            enemyMoveValues[m] = 10;
+            enemyMoveTypes[m] = "attack";
+            enemyMovePoints[m] = 5;
+            enemyMovePointsLeft[m] = enemyMovePoints[m];
+
+            m = 1;
+            enemyMoveNames[m] = "Heal";
+            enemyMoveValues[m] = 10;
+            enemyMoveTypes[m] = "heal";
+            enemyMovePoints[m] = 2;
+            enemyMovePointsLeft[m] = enemyMovePoints[m];
+
+            m = 2;
+            enemyMoveNames[m] = "Super Punch";
+            enemyMoveValues[m] = 10;
+            enemyMoveTypes[m] = "attack";
+            enemyMovePoints[m] = 1;
+            enemyMovePointsLeft[m] = enemyMovePoints[m];
+
+            m = 3;
+            enemyMoveNames[m] = "Lower Enemy Defense";
+            enemyMoveValues[m] = 10;
+            enemyMoveTypes[m] = "lower enemy defence";
+            enemyMovePoints[m] = 1;
+            enemyMovePointsLeft[m] = enemyMovePoints[m];
+
+            m = 4;
+            enemyMoveNames[m] = "Increase Defence";
+            enemyMoveValues[m] = 10;
+            enemyMoveTypes[m] = "increase defence";
+            enemyMovePoints[m] = 1;
+            enemyMovePointsLeft[m] = enemyMovePoints[m];
+
             int selectedMove = 0;
 
-            while (true)
+            while (true) // game loop
             {
                 Console.Clear();
 
@@ -112,13 +164,15 @@ namespace Battle
                 {
                     if (playerMovePointsLeft[selectedMove] == 0)
                     {
-                        Console.WriteLine("You are out of that move.");
+                        Console.WriteLine("That move is out of power.");
                         System.Threading.Thread.Sleep(500);
                         continue;
                     }
 
-                    Console.WriteLine("You used " + playerMoveNames[selectedMove]);
-                    System.Threading.Thread.Sleep(500);
+                    Console.ForegroundColor = playerColor;
+                    Console.WriteLine();
+                    Console.WriteLine("You used " + playerMoveNames[selectedMove] + "!");
+                    System.Threading.Thread.Sleep(1000);
                     if (playerMoveTypes[selectedMove] == "attack")
                     {
                         enemyHealth -= playerMoveValues[selectedMove];
@@ -127,15 +181,40 @@ namespace Battle
                     {
                         playerHealth += playerMoveValues[selectedMove];
                     }
-                    if (playerMoveTypes[selectedMove] == "lower defense")
+                    if (playerMoveTypes[selectedMove] == "lower enemy defence")
                     {
                         enemyDefence -= playerMoveValues[selectedMove];
+                    }
+                    if (playerMoveTypes[selectedMove] == "increase defence")
+                    {
+                        playerDefence += playerMoveValues[selectedMove];
                     }
 
                     playerMovePointsLeft[selectedMove]--;
 
-                    // enemy attack
-                    Random r = new Random();
+                    // enemy attack                   
+                    int enemyAttackIndex = r.Next(0, enemyMovesNum);
+                    Console.ForegroundColor = enemyColor;
+                    Console.WriteLine();
+                    Console.WriteLine("The enemy used " + enemyMoveNames[enemyAttackIndex] + "!");
+                    System.Threading.Thread.Sleep(1000);
+
+                    if (enemyMoveTypes[enemyAttackIndex] == "attack")
+                    {
+                        playerHealth -= enemyMoveValues[enemyAttackIndex];
+                    }
+                    if (enemyMoveTypes[enemyAttackIndex] == "heal")
+                    {
+                        enemyHealth += enemyMoveValues[enemyAttackIndex];
+                    }
+                    if (enemyMoveTypes[enemyAttackIndex] == "lower enemy defence")
+                    {
+                        playerDefence -= enemyMoveValues[enemyAttackIndex];
+                    }
+                    if (enemyMoveTypes[enemyAttackIndex] == "increase defence")
+                    {
+                        enemyDefence += enemyMoveValues[enemyAttackIndex];
+                    }
                 }
             }
         }
