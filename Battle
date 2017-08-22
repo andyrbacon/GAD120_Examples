@@ -13,11 +13,11 @@ namespace Battle
             Random r = new Random();
             int playerMaxHealth = 100;
             int playerHealth = playerMaxHealth;
-            int playerDefence = 0;
+            int playerDefence = 1;
             ConsoleColor playerColor = ConsoleColor.Cyan;
             int enemyMaxHealth = 100;
             int enemyHealth = enemyMaxHealth;
-            int enemyDefence = 0;
+            int enemyDefence = 1;
             ConsoleColor enemyColor = ConsoleColor.Red;
 
             int playerMovesNum = 5;
@@ -175,7 +175,7 @@ namespace Battle
                     System.Threading.Thread.Sleep(1000);
                     if (playerMoveTypes[selectedMove] == "attack")
                     {
-                        enemyHealth -= playerMoveValues[selectedMove];
+                        enemyHealth -= playerMoveValues[selectedMove] / enemyDefence;
                     }
                     if (playerMoveTypes[selectedMove] == "heal")
                     {
@@ -201,7 +201,7 @@ namespace Battle
 
                     if (enemyMoveTypes[enemyAttackIndex] == "attack")
                     {
-                        playerHealth -= enemyMoveValues[enemyAttackIndex];
+                        playerHealth -= enemyMoveValues[enemyAttackIndex] / playerDefence;
                     }
                     if (enemyMoveTypes[enemyAttackIndex] == "heal")
                     {
