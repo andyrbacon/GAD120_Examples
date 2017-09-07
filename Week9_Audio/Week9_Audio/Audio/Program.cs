@@ -21,8 +21,8 @@ namespace Week9_Audio
             // 5. Use SoundPlayer.Play() to play the sound
 
             SoundPlayer soundPlayer = new SoundPlayer();
-            string coinFilePath = Environment.CurrentLocation + "Blah.wav";
-            string fireBallPath = Environment.CurrentLocation + "Fireball.wav";
+            string coinFilePath = Environment.CurrentDirectory + "/Blah.wav";
+            string fireBallPath = Environment.CurrentDirectory + "/Fireball.wav";
             string spell = "";
 
             while (true)
