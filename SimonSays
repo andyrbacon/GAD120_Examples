@@ -10,17 +10,34 @@ namespace AudioExample
 {
     class Program
     {
-        static string blockSoundPath = Environment.CurrentDirectory + "/smb_breakblock.wav";
-        static string coinSoundPath = Environment.CurrentDirectory + "/smb_coin.wav";
-        static string fireballSoundPath = Environment.CurrentDirectory + "/smb_fireball.wav";
-        static string kickSoundPath = Environment.CurrentDirectory + "/smb_kick.wav";
-
-        static List<string> sounds = new List<string> { blockSoundPath, coinSoundPath, fireballSoundPath, kickSoundPath };
         static SoundPlayer soundPlayer = new SoundPlayer();
 
-        static ConsoleColor[] buttonColorsIdle = new ConsoleColor[] { ConsoleColor.Red, ConsoleColor.Yellow, ConsoleColor.Cyan, ConsoleColor.Green };
-        static ConsoleColor[] buttonColorsHighlight = new ConsoleColor[] { ConsoleColor.DarkRed, ConsoleColor.DarkYellow, ConsoleColor.DarkCyan, ConsoleColor.DarkGreen };
-        static ConsoleKey[] consoleKeys = new ConsoleKey[] { ConsoleKey.D1, ConsoleKey.D2, ConsoleKey.D3, ConsoleKey.D4 };
+        static List<string> sounds = new List<string>
+        {   Environment.CurrentDirectory + "/kick.wav",
+            Environment.CurrentDirectory + "/snare.wav",
+            Environment.CurrentDirectory + "/triangle.wav",
+            Environment.CurrentDirectory + "/shaker.wav"
+        };
+
+        static ConsoleColor[] buttonColorsIdle = new ConsoleColor[] 
+        {   ConsoleColor.Red,
+            ConsoleColor.Yellow,
+            ConsoleColor.Cyan,
+            ConsoleColor.Green
+        };
+        static ConsoleColor[] buttonColorsHighlight = new ConsoleColor[] 
+        {   ConsoleColor.DarkRed,
+            ConsoleColor.DarkYellow,
+            ConsoleColor.DarkCyan,
+            ConsoleColor.DarkGreen
+        };
+
+        static ConsoleKey[] consoleKeys = new ConsoleKey[] 
+        {   ConsoleKey.D1,
+            ConsoleKey.D2,
+            ConsoleKey.D3,
+            ConsoleKey.D4
+        };
 
         static int startingLevel = 1;
         static List<int> simonLevel = new List<int>();
@@ -29,7 +46,9 @@ namespace AudioExample
         static State state = State.intro;
         static int playerLevelIndex = 0;
         static string message = "";
-
+        static int playerSoundDelay = 100;
+        static int simonSoundDelay = 250;
+        static ConsoleKeyInfo consoleKey;
         static void Main(string[] args)
         {
             // setup 
@@ -38,12 +57,17 @@ namespace AudioExample
             DrawButtons(-1);
 
             while (true)
-            {
-                ConsoleKey key = Console.ReadKey(true).Key;
-
+            { 
+                consoleKey = Console.ReadKey();
                 if (state == State.intro)
                 {
-                    if (key == ConsoleKey.Spacebar)
+                    for (int i = 0; i < consoleKeys.Length; i++)
+                    {
+                        if (consoleKey.Key == consoleKeys[i])
+                            PlaySound(i, playerSoundDelay);
+                    }
+
+                    if (consoleKey.Key == ConsoleKey.Spacebar)
                     {
                         PlaySimon();
                     }
@@ -52,7 +76,7 @@ namespace AudioExample
                 {
                     for (int i = 0; i < consoleKeys.Length; i++)
                     {
-                        if (key == consoleKeys[i])
+                        if (consoleKey.Key == consoleKeys[i])
                             PlayPlayer(i);
                     }
                 }
@@ -67,22 +91,28 @@ namespace AudioExample
 
         static void PlayPlayer(int index)
         {
-            PlaySound(index);
+            PlaySound(index, playerSoundDelay);
             if (index == simonLevel[playerLevelIndex])
             {
                 //Console.WriteLine("YES");
-                if (playerLevelIndex == simonLevel.Count-1)
+                if (playerLevelIndex == simonLevel.Count - 1)
                 {
+                    System.Threading.Thread.Sleep(simonSoundDelay);
                     PlaySimon();
                     return;
                 }
                 playerLevelIndex++;
-            }             
+            }
             else
             {
                 //Console.WriteLine("NO");
+                soundPlayer.SoundLocation = Environment.CurrentDirectory + "/failure.wav";
+                soundPlayer.Play();
+                Console.Clear();
+                Console.WriteLine("GAME OVER!");
+                System.Threading.Thread.Sleep(1000);
                 Restart();
-            }      
+            }
         }
 
         static void Restart()
@@ -94,14 +124,14 @@ namespace AudioExample
             DrawButtons(-1);
         }
 
-        static void PlaySound(int index)
+        static void PlaySound(int index, int delay = 250)
         {
             soundPlayer.SoundLocation = sounds[index];
             DrawButtons(index);
             soundPlayer.Play();
-            System.Threading.Thread.Sleep(500);
+            System.Threading.Thread.Sleep(delay);
             DrawButtons(-1);
-            System.Threading.Thread.Sleep(250);
+            System.Threading.Thread.Sleep(delay);
         }
 
         static void PlaySimon()
@@ -112,11 +142,11 @@ namespace AudioExample
             for (int i = 0; i < simonLevel.Count; i++)
             {
                 int index = simonLevel[i];
-                PlaySound(index);
+                PlaySound(index, simonSoundDelay);
             }
 
-            state = State.player;
             playerLevelIndex = 0;
+            state = State.player;
             DrawButtons(-1);
         }
 
@@ -129,31 +159,42 @@ namespace AudioExample
             if (state == State.intro)
                 message = "PRESS SPACE TO START";
             else if (state == State.player)
-                message = "YOUR TURN " + playerLevelIndex;
+                message = "YOUR TURN ";// + playerLevelIndex;
             else if (state == State.simon)
                 message = "SIMON'S TURN";
             Console.WriteLine(message);
         }
-
+        
         static void DrawButtons(int highlightIndex)
         {
             Console.Clear();
 
             DrawInstructions();
             Console.WriteLine();
-            Console.Write("   ");
+            string space = "    ";
 
-            for (int i = 0; i < buttonColorsIdle.Length; i++)
+            int rows = 5;
+            for (int r = 0; r < rows; r++)
             {
-                if (highlightIndex == i)
-                    Console.BackgroundColor = buttonColorsHighlight[i];
-                else
-                    Console.BackgroundColor = buttonColorsIdle[i];
+                Console.Write(space);
+                for (int i = 0; i < buttonColorsIdle.Length; i++)
+                {
+                    if (highlightIndex == i)
+                        Console.BackgroundColor = buttonColorsHighlight[i];
+                    else
+                        Console.BackgroundColor = buttonColorsIdle[i];
 
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write(" " + (consoleKeys[i]) + " ");
+                    if (r == rows/2)
+                        Console.ForegroundColor = ConsoleColor.Black;
+                    else
+                        Console.ForegroundColor = Console.BackgroundColor;
+
+                    Console.Write(space + (consoleKeys[i]) + space);
+                    Console.ResetColor();
+                    Console.Write(space);
+                }
+                Console.WriteLine();               
             }
-
             Console.ResetColor();
         }
     }
