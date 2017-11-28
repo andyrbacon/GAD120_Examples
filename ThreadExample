@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace NumberGame
+{
+    class Program
+    {
+        static float timer = 3;
+        static float time = 0;
+        static int width = 4, height = 4;
+        static int playerX = 0, playerY = 0;
+
+        static void Timer()
+        {
+            time = timer;
+            while(time > 0)
+            {
+                Thread.Sleep(1000);
+                time--;
+                Draw();
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            Thread thread = new Thread(Timer);
+            thread.Start();
+            Draw();
+  
+            while (true)
+            {
+                ConsoleKey key = Console.ReadKey().Key;
+
+                if (key == ConsoleKey.RightArrow)
+                {
+                    playerX++;
+                    Draw();
+                }
+            }
+        }
+
+        static void Draw()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Time Remaining: " + time);
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    Console.Write(GetCell(x, y));
+                }
+                Console.WriteLine();
+            }
+        }
+
+        static string GetCell(int x, int y)
+        {
+            string cell = "[ ]";
+            if (x == playerX && y == playerY)
+                cell = "[P]";
+            return cell;
+        }
+    }
+}
