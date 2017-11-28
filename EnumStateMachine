@@ -1,0 +1,114 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Week9
+{
+    class Program
+    {
+        enum State { start, nameGame, mathGame, guessTheNumber };
+      
+        static void Main(string[] args)
+        {
+            State state = State.start;
+
+            while (true) // game loop
+            {
+                Console.Clear();
+
+                if (state == State.nameGame)
+                {
+                    Console.WriteLine("The state is nameGame");
+                    NameGame();
+                }
+
+                if (state == State.mathGame)
+                {
+                    Console.WriteLine("The state is mathGame");
+                    MathGame();
+                }
+
+                if (state == State.guessTheNumber)
+                {
+                    Console.WriteLine("The state is guessTheNumber");
+                    GuessTheNumber();
+                }
+
+                Console.WriteLine();
+                Console.WriteLine("CHOOSE A GAME: ");
+                Console.WriteLine("Left Arrow: Math Game");
+                Console.WriteLine("Right Arrow: Name Game");
+                Console.WriteLine("Up Arrow: Guess The Number ");
+
+                ConsoleKey key = Console.ReadKey().Key;
+
+                if (key == ConsoleKey.LeftArrow)
+                {
+                    state = State.mathGame;
+                }
+
+                if (key == ConsoleKey.RightArrow)
+                {
+                    state = State.nameGame;
+                }
+
+                if (key == ConsoleKey.UpArrow)
+                {
+                    state = State.guessTheNumber;
+                }
+            }
+        }
+
+        static void NameGame()
+        {
+            Console.WriteLine("---------  NAME GAME ---------");
+            Console.WriteLine("Input your name, then press ENTER");
+            string input = Console.ReadLine();
+            Console.WriteLine("Hello " + input + "! Thanks for playing the NAME GAME.");
+        }
+
+        static void MathGame()
+        {
+            Console.WriteLine("---------  MATH GAME ---------");
+            Console.WriteLine("Input a number, then press ENTER");
+            string firstNumber = Console.ReadLine();
+            Console.WriteLine("Input another number, then press ENTER");
+            string secondNumber = Console.ReadLine();
+            int result = int.Parse(firstNumber) * int.Parse(secondNumber);
+            Console.WriteLine("Those numbers multiplied together make: " + result);
+        }
+
+        static void GuessTheNumber()
+        {
+            Random random = new Random();
+            int min = 0, max = 10;
+            int randomNum = random.Next(min, max+1);
+            //Console.WriteLine(randomNum);
+
+            while (true)
+            {    
+                Console.WriteLine("Input a number between " + min + " and " + max + ", then press ENTER. Or input QUIT to quit.");
+                string input = Console.ReadLine();
+
+                if (input.ToUpper() == "QUIT")
+                    break;
+
+                if (int.Parse(input) == randomNum)
+                {
+                    Console.WriteLine("CORRECT!");
+                    break;
+                }
+                else
+                {
+                    if (int.Parse(input) < randomNum)
+                        Console.WriteLine("TOO LOW");
+                    if (int.Parse(input) > randomNum)
+                        Console.WriteLine("TOO HIGH");
+                }
+            }
+     
+        }
+    }
+}
